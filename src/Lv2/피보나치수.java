@@ -10,7 +10,7 @@ public class 피보나치수 {
         for (int i = 2; i <= n; i++) {
             temp[i] = (temp[i - 1] + temp[i - 2]) % 1234567;
         }
-        answer = (int)temp[n];
+        answer = (int) temp[n];
         return answer;
     }
 

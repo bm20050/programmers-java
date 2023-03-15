@@ -1,35 +1,29 @@
 package Lv2;
 
 import java.util.Arrays;
-import java.util.Stack;
+import java.util.Collections;
 
 public class 구명보트 {
     public static int solution(int[] people, int limit) {
         int answer = 0;
-        Stack<Integer> st = new Stack<>();
-        Arrays.sort(people);
-        int sum = 0;
-        for (int i = 0; i < people.length; i++) {
-            if (st.isEmpty()) {
-                st.push(people[i]);
-                sum += people[i];
+        Integer[] p = Arrays.stream(people).boxed().toArray(Integer[]::new);
+        Arrays.sort(p, Collections.reverseOrder());
+        int i = 0;
+        int j = 0;
+        int count = 0;
+        while (count < p.length) {
+            if (p[i] + p[p.length - 1 - j] <= limit) {
+                count += 2;
+                i++;
+                j++;
             }
             else {
-                answer += 1;
-
-                if (sum + people[i] < limit)
-                st.push(people[i]);
-                sum += people[i];
-
-            }
-            else {
-                answer += 1;
-                st.clear();
-                st.push(people[i]);
-                sum += people[i];
+                i++;
+                count++;
             }
         }
-        return answer + 1;
+
+        return i;
     }
 
     public static void main(String[] args) {

@@ -1,11 +1,6 @@
 package Lv2;
 
 public class 타겟넘버 {
-<<<<<<< HEAD
-    public static int solution(int[] numbers, int target) {
-        int answer = 0;
-=======
-
     public static int dfs(int prev, int index, int[] numbers, int target) {
         if (index >= numbers.length) {
             if (target == prev) {
@@ -22,13 +17,13 @@ public class 타겟넘버 {
 
         return ans;
     }
+
     public static int solution(int[] numbers, int target) {
         int answer = 0;
         int current = numbers[0];
 
         answer += dfs(current, 1, numbers, target);
         answer += dfs(-current, 1, numbers, target);
->>>>>>> 32816b6c2d93c689bdb3217a0ba9e938f35e41fe
         return answer;
     }
 

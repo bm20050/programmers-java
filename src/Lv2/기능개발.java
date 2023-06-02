@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class 기능개발 {
     public static int[] solution(int[] progresses, int[] speeds) {
-        ArrayList<Integer> a = new ArrayList<>();
+        ArrayList<Integer> a  = new ArrayList<>();
         ArrayList<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < progresses.length; i++) {
